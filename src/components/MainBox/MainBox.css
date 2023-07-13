@@ -1,0 +1,115 @@
+.main-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95.7%;
+    height: 92%;
+    outline: 1px solid #e4e4e4;
+    transition: all 0.3s ease 0s;
+}
+
+.name-container {
+    padding: 10px;
+    position: absolute;
+    top: 15px;
+    left: 25px;
+}
+
+.name {
+    margin: 0;
+    color: #e4e4e4;
+    font-family: "Old London", sans-serif;
+    font-size: 4em;
+}
+
+.subtext {
+    margin: 0;
+    color: #e4e4e4;
+    font-family: Arial, sans-serif;
+    font-size: 1.25em;
+}
+
+.button-list {
+    position: fixed;
+    bottom: 15px;
+    left: 25px;
+    margin-top: 20px;
+}
+
+button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    font-size: 1.25em;
+    background-color: transparent;
+    color: #e4e4e4;
+    border: none;
+    transition: all 0.3s ease 0s;
+}
+
+button:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.active::before {
+    content: "●";
+    margin-right: 10px;
+}
+
+.bio-container {
+    position: fixed;
+    bottom: 15px;
+    right: 25px;
+    width: 175px;
+    max-height: 90%;
+    overflow-y: auto;
+    font-family: Arial, sans-serif;
+    font-size: 1.25em;
+}
+
+.mode-toggle {
+    position: absolute;
+    top: 15px;
+    right: 5px;
+}
+
+.toggle-button {
+    background-color: transparent;
+    border: none;
+    color: #e4e4e4;
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+}
+
+.toggle-button:hover {
+    cursor: pointer;
+    color: white;
+}
+
+/* Add a new class for light mode */
+.light-mode {
+    background-color: white;
+    color: #121212;
+}
+
+/* Update the styles for light mode */
+.light-mode .name {
+    color: #121212;
+}
+
+.light-mode .subtext {
+    color: #121212;
+}
+
+.light-mode button {
+    color: #121212;
+}
+
+.light-mode button:hover {
+    color: #000;
+}
+
+.light-mode .active::before {
+    color: #121212;
+}

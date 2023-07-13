@@ -1,3 +1,5 @@
+/* Styles for PC */
+
 .main-box {
     position: fixed;
     top: 50%;
@@ -112,4 +114,64 @@ button:hover {
 
 .light-mode .active::before {
     color: #121212;
+}
+
+/* Styles for mobile */
+@media (max-width: 767px) {
+    .main-box {
+        width: 90%;
+        height: 95.5%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    /* Reset the padding of .name-container */
+    .name-container {
+        padding: 0;
+        position: static;
+        text-align: center;
+        margin-top: 15px;
+        left: 0;
+    }
+
+    .name {
+        font-size: 2.5em;
+    }
+
+    .subtext {
+        font-size: 1em;
+    }
+
+    .button-list {
+        position: static;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    button {
+        margin: 5px; /* Adjust margin as needed */
+        padding: 5px 4px; /* Adjust button padding to make them smaller */
+        font-size: 1em; /* Adjust font size to make the buttons smaller */
+    }
+
+    .bio-container {
+        position: static;
+        width: 90%;
+        max-height: none;
+        overflow-y: auto;
+        margin: 15px;
+        right: 0;
+        left: 0;
+    }
+
+    .mode-toggle {
+        position: static;
+        text-align: center;
+        margin-top: 15px;
+        right: 0;
+    }
 }

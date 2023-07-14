@@ -1,11 +1,13 @@
 import { useState } from "react"
-import MainBox from "./components/MainBox/MainBox"
+import Taskbar from "./components/Taskbar/Taskbar"
+import Desktop from "./components/Desktop/Desktop"
 import "./App.css"
 
 function App() {
     return (
         <>
-            <MainBox />
+            <Desktop />
+            <Taskbar />
         </>
     )
 }

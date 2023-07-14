@@ -1,0 +1,18 @@
+.icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.icon span {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: white;
+    margin-top: 5px;
+    font-size: 12px;
+    text-align: center;
+}

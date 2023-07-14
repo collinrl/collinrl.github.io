@@ -1,0 +1,59 @@
+body {
+    line-height: 1.5;
+    letter-spacing: -0.025em;
+    text-rendering: optimizeLegibility;
+    font-size: 12px;
+}
+
+.taskbar-container {
+    padding: 2px;
+    box-shadow: inset 1px 0 #fff;
+    display: block;
+    background-color: silver;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #f4f4f4;
+    border-bottom: 1px solid #4e4e4e;
+    position: fixed;
+}
+
+.start-button {
+    background-image: url(https://win98icons.alexmeub.com/images/start-button.png);
+    background-repeat: no-repeat;
+    width: 45px;
+    height: 14px;
+}
+
+.start-button-wrapper {
+    float: left;
+    margin-left: 2px;
+    margin-bottom: 2px;
+    vertical-align: middle;
+    padding: 2px 6px 3px;
+    background-color: silver;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
+    box-shadow: inset 1px 1px #dfdfdf, 1px 0 #000, 0 1px #000, 1px 1px #000;
+    min-width: 59px;
+    margin-right: 6px;
+    color: #000;
+}
+
+.start-text {
+    float: right;
+    text-align: right;
+    padding: 0 10px;
+    border-top: 1px solid gray;
+    border-left: 1px solid gray;
+    vertical-align: middle;
+    height: 20px;
+    line-height: 20px;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    font-family: Arial;
+    font-weight: 400;
+    color: #000;
+}

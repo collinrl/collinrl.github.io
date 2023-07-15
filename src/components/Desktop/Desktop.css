@@ -16,3 +16,104 @@
     font-size: 12px;
     text-align: center;
 }
+.email-window {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.email-window-content {
+    font-weight: 400;
+    letter-spacing: 0.025em;
+    background-color: #c6c6c6;
+    border-top: 2px solid #efefef;
+    border-left: 2px solid #efefef;
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+    width: 500px;
+    position: relative;
+}
+
+.email-window-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 25px;
+    position: relative;
+    text-align: left;
+    color: #fff;
+    padding: 0.25em 0.75em;
+    line-height: 1.4;
+    border-top: 1px solid silver;
+    border-left: 1px solid silver;
+    border-right: 2px solid silver;
+    border-bottom: 1px solid silver;
+    background: navy;
+}
+
+.email-window-title {
+    margin: 0;
+    font-weight: bold;
+}
+
+.email-window-close-button {
+    width: 16px;
+    height: 16px;
+    background-color: silver;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
+    box-shadow: inset 1px 1px #dfdfdf, 1px 0 #000, 0 1px #000, 1px 1px #000;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.email-window-body {
+    padding: 10px;
+}
+
+.email-window-input-container {
+    margin-bottom: 10px;
+}
+
+.email-window-input {
+    width: 100%;
+}
+
+.email-window-textarea {
+    width: 100%;
+    height: 100px;
+    resize: none;
+}
+
+.email-window-buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.email-window-send-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 12px;
+    background-color: #c9c9c9;
+    width: 50px;
+    height: 50px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    border-right: solid 1px white;
+    border-bottom: solid 1px white;
+    border-top: solid 1px #81807e;
+    border-left: solid 1px #81807e;
+    box-shadow: inset -1px -1px #81807e, inset 1px 1px white;
+}

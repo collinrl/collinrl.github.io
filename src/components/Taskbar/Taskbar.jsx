@@ -21,11 +21,11 @@ const Taskbar = () => {
     return (
         <div className="taskbar-container">
             <div className="start-button-wrapper">
-                <a href="">
+                <a href="" className="start-button-link">
                     <div className="start-button"></div>
                 </a>
             </div>
-            <span className="start-text">{currentTime}</span>
+            <span className="time-text">{currentTime}</span>
         </div>
     )
 }

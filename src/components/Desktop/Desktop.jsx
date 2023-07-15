@@ -1,9 +1,13 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import "./Desktop.css"
 import emailjs from "@emailjs/browser"
+import { useCookies } from "react-cookie"
 
 const Desktop = () => {
     const [isEmailWindowOpen, setEmailWindowOpen] = useState(false)
+    const [isEmailValid, setEmailValid] = useState(true)
+    const [isFormClicked, setFormClicked] = useState(false)
+    const [cookies, setCookie] = useCookies(["emailCooldown"])
 
     const handleEmailIconDoubleClick = () => {
         setEmailWindowOpen(true)
@@ -16,6 +20,17 @@ const Desktop = () => {
     const sendEmail = (event) => {
         event.preventDefault()
 
+        const fromEmail = event.target.from_name.value
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+        if (!emailRegex.test(fromEmail)) {
+            // Display an error message or perform any desired actions for invalid email
+            console.log("Invalid email")
+            setEmailValid(false)
+            setFormClicked(true)
+            return
+        }
+
         emailjs
             .sendForm(
                 "service_towsouj",
@@ -27,12 +42,26 @@ const Desktop = () => {
                 (result) => {
                     console.log(result.text)
                     handleCloseEmailWindow()
+                    setCookie("emailCooldown", true, { maxAge: 600 })
                 },
                 (error) => {
                     console.log(error.text)
                 }
             )
     }
+
+    const handleFromInputClick = () => {
+        if (!isEmailValid) {
+            setEmailValid(true)
+            setFormClicked(false)
+        }
+    }
+
+    useEffect(() => {
+        if (cookies.emailCooldown) {
+            setEmailWindowOpen(false)
+        }
+    }, [cookies.emailCooldown])
 
     return (
         <div className="desktop">
@@ -58,7 +87,9 @@ const Desktop = () => {
                 <span>My Projects</span>
             </div>
             <div
-                className="icon email-me-icon"
+                className={`icon email-me-icon ${
+                    cookies.emailCooldown ? "disabled" : ""
+                }`}
                 onDoubleClick={handleEmailIconDoubleClick}
             >
                 <img
@@ -106,8 +137,14 @@ const Desktop = () => {
                                     <input
                                         id="email-window-from-input"
                                         type="text"
-                                        className="email-window-input"
+                                        className={`email-window-input ${
+                                            !isEmailValid && isFormClicked
+                                                ? "invalid-email"
+                                                : ""
+                                        }`}
                                         name="from_name"
+                                        required
+                                        onClick={handleFromInputClick}
                                     />
                                 </div>
                                 <div className="email-window-input-container">
@@ -130,12 +167,14 @@ const Desktop = () => {
                                         className="email-window-textarea"
                                         placeholder="Enter your message here"
                                         name="body"
+                                        required
                                     ></textarea>
                                 </div>
                                 <div className="email-window-buttons">
                                     <button
                                         type="submit"
                                         className="email-window-send-button"
+                                        disabled={cookies.emailCooldown}
                                     >
                                         <img
                                             src="https://win98icons.alexmeub.com/icons/png/envelope_closed-0.png"

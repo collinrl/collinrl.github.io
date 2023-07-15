@@ -117,3 +117,11 @@
     border-left: solid 1px #81807e;
     box-shadow: inset -1px -1px #81807e, inset 1px 1px white;
 }
+
+.invalid-email {
+    color: red;
+}
+
+.email-window-input.invalid-email {
+    border-color: red;
+}
